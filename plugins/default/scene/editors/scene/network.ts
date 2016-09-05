@@ -3,7 +3,7 @@ import ui, {
   setCameraMode, setCameraVerticalAxis, createNodeElement, setupSelectedNode, createComponentElement,
   setInspectorPosition, setInspectorOrientation, setInspectorScale,
   setInspectorVisible, setInspectorLayer, setInspectorPrefabScene,
-  setupInspectorLayers } from "./ui";
+  setupInspectorLayers, setBackgroundColor } from "./ui";
 import engine, { start as engineStart, setupHelpers } from "./engine";
 import * as async from "async";
 
@@ -89,6 +89,7 @@ function startIfReady() {
 
     setCameraMode(data.sceneSettingsResource.pub.defaultCameraMode);
     setCameraVerticalAxis(data.sceneSettingsResource.pub.defaultVerticalAxis);
+    setBackgroundColor(data.sceneSettingsResource.pub.defaultBackgroundColor);
     setupInspectorLayers();
   }
 }

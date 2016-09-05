@@ -2,6 +2,7 @@
   "Scene": {
     "label": "Scene",
     "defaultCameraMode": "Default camera mode",
-    "defaultCameraVerticalAxis": "Default camera vertical axis"
+    "defaultCameraVerticalAxis": "Default camera vertical axis",
+    "defaultBackgroundColor": "Default background color"
   }
 }

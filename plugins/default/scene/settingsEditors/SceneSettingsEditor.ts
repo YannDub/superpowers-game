@@ -26,6 +26,13 @@ export default class SceneSettingsEditor {
       this.projectClient.editResource("sceneSettings", "setProperty", "defaultVerticalAxis", event.target.value);
     });
 
+    let defaultBackgroundColorRow = SupClient.table.appendRow(tbody, SupClient.i18n.t("settingsEditors:Scene.defaultBackgroundColor"));
+    this.fields["defaultBackgroundColor"] = SupClient.table.appendColorField(defaultBackgroundColorRow.valueCell, "0x000000").pickerField;
+
+    this.fields["defaultBackgroundColor"].addEventListener("change", (event: any) => {
+      this.projectClient.editResource("sceneSettings", "setProperty", "defaultBackgroundColor", event.target.value);
+    });
+
     this.projectClient.subResource("sceneSettings", this);
   }
 

@@ -3,6 +3,7 @@ interface SceneSettingsResourcePub {
 
   defaultCameraMode: string;
   defaultVerticalAxis: string;
+  defaultBackgroundColor: string;
   [key: string]: any;
 }
 
@@ -13,7 +14,8 @@ export default class SceneSettingsResource extends SupCore.Data.Base.Resource {
     formatVersion: { type: "integer" },
 
     defaultCameraMode: { type: "enum", items: [ "3D", "2D" ], mutable: true },
-    defaultVerticalAxis: { type: "enum", items: [ "Y", "Z" ], mutable: true }
+    defaultVerticalAxis: { type: "enum", items: [ "Y", "Z" ], mutable: true },
+    defaultBackgroundColor: { type: "string", mutable: true }
   };
 
   pub: SceneSettingsResourcePub;
@@ -27,7 +29,8 @@ export default class SceneSettingsResource extends SupCore.Data.Base.Resource {
       formatVersion: SceneSettingsResource.currentFormatVersion,
 
       defaultCameraMode: "3D",
-      defaultVerticalAxis: "Y"
+      defaultVerticalAxis: "Y",
+      defaultBackgroundColor: "#000000"
     };
 
     super.init(callback);

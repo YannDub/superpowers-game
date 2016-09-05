@@ -747,6 +747,10 @@ function onChangeCameraVerticalAxis(event: any) {
   setCameraVerticalAxis(ui.cameraVerticalAxis === "Y" ? "Z" : "Y");
 }
 
+export function setBackgroundColor(color: string) {
+  engine.gameInstance.threeRenderer.setClearColor(color);
+}
+
 function onChangeCameraSpeed() {
   engine.cameraControls.movementSpeed = ui.cameraSpeedSlider.value;
 }
